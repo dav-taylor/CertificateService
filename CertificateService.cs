@@ -14,6 +14,9 @@ using System.Collections.Concurrent;
 using System.Security.Cryptography.X509Certificates;
 namespace CertificateService;
 
+/// <summary>
+/// Extension methods to integrate CertificateService with asp.net.
+/// </summary>
 public static class CertificateExtensionMethods
 {
     /// <summary>
@@ -74,7 +77,7 @@ public static class CertificateExtensionMethods
     }
 }
 
-public class CertificateService : IDisposable
+internal class CertificateService : IDisposable
 {
     private readonly IConfiguration _config;
     private readonly ILogger<CertificateService> _logger;
@@ -401,7 +404,7 @@ public class CertificateService : IDisposable
 
 // Record used to deserialize settings from IConfiguration
 // *Domains* should be null or empty array if using Yarp.  For non-YARP use supply the domain(s) for the certificates
-public record CertificateServiceConfig(bool AcceptTermsOfService, string CertPath, string Email, string Password, CsrInfo CsrInfo, string[]? Domains = null);
+internal record CertificateServiceConfig(bool AcceptTermsOfService, string CertPath, string Email, string Password, CsrInfo CsrInfo, string[]? Domains = null);
 
 // Empty record used to watch for changes in YARP ReverseProxy section from IConfiguration
-public record ReverseProxyConfig;
+internal record ReverseProxyConfig;
