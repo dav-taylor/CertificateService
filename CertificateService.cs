@@ -333,7 +333,7 @@ public class CertificateService : IDisposable
             // Create AcmeContext from newly created account and saving account key
             _logger.LogInformation("LetsEncrypt creating new account {pemPath}", pemPath);
             var acme = new AcmeContext(_letsEncryptUri);
-            _ = await acme.NewAccount(_certificateServiceConfig.Email, true);
+            _ = await acme.NewAccount(_certificateServiceConfig.Email, _certificateServiceConfig.AcceptTermsOfService);
             var pemKey = acme.AccountKey.ToPem();
             File.WriteAllText(pemPath, pemKey);
             return acme;
