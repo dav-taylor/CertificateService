@@ -1,3 +1,5 @@
+CertificateService is available as a nuget package.
+
 CertificateService supports either direct usage or usage as part of a YARP reverse proxy configuration.  Here is an example appsettings.json configuration file for direct usage:
 
 ```json
