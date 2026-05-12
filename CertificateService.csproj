@@ -8,7 +8,7 @@
     <OutputType>Library</OutputType>
 
     <PackageId>CertificateService</PackageId>
-    <Version>0.1.0-alpha.1</Version>
+    <Version>0.1.0</Version>
     <Authors>David Taylor</Authors>
     <Description>Automatic Let's Encrypt certificate provisioning and renewal for ASP.NET Core/Kestrel applications, including optional YARP reverse proxy support.</Description>
 
